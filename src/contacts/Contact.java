@@ -12,9 +12,9 @@ public class Contact {
     public Contact(String name, String phoneNumber, String email) {
         if (name == null || name.isEmpty()) throw new EmptyNameException("Name cannot be empty");
         this.name = name;
-        if (name == null || phoneNumber.isEmpty()) throw new EmptyPhoneException("Phone number cannot be empty");
+        if (phoneNumber == null || phoneNumber.isEmpty()) throw new EmptyPhoneException("Phone number cannot be empty");
         this.phoneNumber = phoneNumber;
-        if (name == null || email.isEmpty()) throw new EmptyEmailException("Email cannot be empty");
+        if (email == null || email.isEmpty()) throw new EmptyEmailException("Email cannot be empty");
         this.email = email;
     }
 
