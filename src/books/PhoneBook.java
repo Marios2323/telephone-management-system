@@ -37,4 +37,14 @@ public class PhoneBook {
         }
         System.out.println("**************************************");
     }
+
+    public boolean containsContact(String name) {
+        for (Contact contact : contacts) {
+            if (contact.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
