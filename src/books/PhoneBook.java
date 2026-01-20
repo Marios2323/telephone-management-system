@@ -30,7 +30,7 @@ public class PhoneBook {
         if (contacts.isEmpty()) throw new EmptyContactListException("Contact list is empty");
         int contactCounter = 1;
         for (Contact contact : contacts) {
-            System.out.println(contactCounter + "\nContact name: " + contact.getName() +
+            System.out.println("-----" + contactCounter + "-----" + "\nContact name: " + contact.getName() +
                     "\nContact phone number: " + contact.getPhoneNumber() +
                     "\nContact E-mail: " + contact.getEmail());
             contactCounter++;
@@ -39,6 +39,10 @@ public class PhoneBook {
     }
 
     public boolean containsContact(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name should not be empty");
+        }
+
         for (Contact contact : contacts) {
             if (contact.getName().equals(name)) {
                 return true;
@@ -46,5 +50,4 @@ public class PhoneBook {
         }
         return false;
     }
-
 }
