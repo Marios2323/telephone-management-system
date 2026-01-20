@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
+// List of PhoneBook Tests
 public class PhoneBookTest {
     @Test
     public void shouldContainContactAfterAddingIt() {
@@ -22,9 +23,9 @@ public class PhoneBookTest {
         assertFalse(phoneBook.containsContact("NoName"));
     }
 
-    @Test
-    public void shouldNotContainEmptyContactName() {
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenNameIsEmpty() {
         PhoneBook phoneBook = new PhoneBook();
-        assertFalse(phoneBook.containsContact(""));
+        phoneBook.containsContact("");
     }
 }
